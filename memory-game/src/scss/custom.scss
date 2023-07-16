@@ -16,7 +16,45 @@ body{
     color: #fff;
 }
 
-.card{
-    width: 100px;
-    height: 100px;
+.containerApp{
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.imagesContainer{
+    position: relative;
+}
+
+.imagesContainer img, .imagesContainer{
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 6px;
+}
+
+.imagesContainer .backImage{
+    position: absolute;
+    transform: rotateY(90deg);
+    transition: all ease-in 0.2s;
+}
+
+.imagesContainer .frondImage{
+    transform: rotateY(0deg);
+    transition: all ease-in 0.2s;
+}
+
+.rotated .backImage{
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+}
+
+.rotated .frondImage{
+    transform: rotateY(90deg);
+    transition-delay: 0.2s;
+}
+
+.cardsContainer{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap:10px;
+   margin-top: 10px;
 }
