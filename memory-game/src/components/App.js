@@ -75,13 +75,19 @@ const App = () => {
     setcontrolClickCard(true);
   };
 
-  const changeRecord = (score) => {
-    setTimeout(() => {
-      if (typeof record === "string" || score < record) {
-        setRecord(score);
-      }
-    }, 1000);
-  };
+  // const changeRecord = (score) => {
+  //   setTimeout(() => {
+  //     // if (typeof record === "string" || score < record) {
+  //     //   setRecord(score);
+  //     // }
+
+  //     setRecord((prevRecord)=>{
+  //        if(typeof prevRecord === "string" || score < record){
+  //            return score;
+  //        }
+  //     });
+  //   }, 1000);
+  // };
 
   useEffect(() => {
     const myRecord = window.localStorage.getItem("record");
@@ -102,7 +108,14 @@ const App = () => {
         trueSelected = trueSelected + 1;
 
         if (trueSelected === 8) {
-          changeRecord(score);
+          // changeRecord(score);
+          setRecord((prevRecord) => {
+            setTimeout(() => {
+              if (typeof prevRecord === "string" || score < prevRecord) {
+                return score;
+              }
+            }, 1000);
+          });
         }
 
         setCards((prevCards) => {

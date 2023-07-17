@@ -25,11 +25,13 @@ body{
     position: relative;
 }
 
+
 .imagesContainer img, .imagesContainer{
     width: 100%;
     border: 2px solid #fff;
     border-radius: 6px;
 }
+
 
 .imagesContainer .backImage{
     position: absolute;
@@ -50,6 +52,10 @@ body{
 .rotated .frondImage{
     transform: rotateY(90deg);
     transition-delay: 0.2s;
+}
+
+.imagesContainer img:last-child {
+    cursor: pointer;
 }
 
 .cardsContainer{
